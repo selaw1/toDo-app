@@ -16,7 +16,7 @@ function getCookie(name) {
 
 const buildList = () => {
     const wrapper = document.getElementById("list-wrapper")
-    const url = 'https://apitask-app.herokuapp.com/api/task-list/'
+    const url = 'https://task-apiapp.herokuapp.com/api/task-list/'
     
     wrapper.innerHTML = ''
 
@@ -85,7 +85,7 @@ const editItem = item => {
 
 const deleteItem = (item) => {
     console.log('item clicked for DELETE', item)
-    const url = `https://apitask-app.herokuapp.com/api/task-delete/${item.id}`;
+    const url = `https://task-apiapp.herokuapp.com/api/task-delete/${item.id}`;
 
     fetch(url, {
         method:'DELETE',
@@ -98,7 +98,7 @@ const deleteItem = (item) => {
 
 const toggleStrike = item => {
     console.log('Strike Toggled for: ', item)
-    const url = `https://apitask-app.herokuapp.com/api/task-update/${item.id}/`;
+    const url = `https://task-apiapp.herokuapp.com/api/task-update/${item.id}/`;
     item.completed = !item.completed;
 
     fetch(url, {
@@ -122,11 +122,11 @@ form.addEventListener('submit', function(e){
     console.log('form submitted')
 
     let method = 'POST';
-    let url = 'https://apitask-app.herokuapp.com/api/task-create/';
+    let url = 'https://task-apiapp.herokuapp.com/api/task-create/';
     
     if (activeItem){
         method = 'PUT';
-        url = `https://apitask-app.herokuapp.com/api/task-update/${activeItem.id}/`;
+        url = `https://task-apiapp.herokuapp.com/api/task-update/${activeItem.id}/`;
         activeItem = null;
     }
 
